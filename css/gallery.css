@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "MaruBuri";
+    font-weight: 100;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-ExtraLight.woff2)
+      format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "MaruBuri";
+    font-weight: 300;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Light.woff2)
+      format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "MaruBuri";
+    font-weight: 400;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Regular.woff2)
+      format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "MaruBuri";
+    font-weight: 500;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-SemiBold.woff2)
+      format("woff2");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "MaruBuri";
+    font-weight: 700;
+    font-style: normal;
+    src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Bold.woff2)
+      format("woff2");
+    font-display: swap;
+  }
+  
+  ::-webkit-scrollbar {
+    height: inherit;
+    width: 10px;
+    padding-left: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: none;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  body {
+    font-family: "pretendard";
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header_container {
+    width: 80%;
+    margin: auto;
+    overflow: auto;
+  }
+  
+  .container {
+    margin: auto;
+    overflow: auto;
+    flex: 1;
+    z-index: 5;
+    position: relative;
+    display: block;
+    height: auto;
+    overflow-x: hidden;
+  }
+  
+  header {
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #fff 1px solid;
+  }
+  
+  header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  
+  nav {
+    float: right;
+    margin-top: 10px;
+  }
+  
+  nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .post {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+  }
+  
+  .post:last-child {
+      margin-bottom: 140px;
+  }
+  
+  #gallery {
+      width: 38vw;
+      height: auto;
+      overflow-x: hidden;
+      margin-bottom: 140px;
+  }
+  
+  .gallery {
+    width: 38vw;
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post img {
+    position: relative;
+    height: auto;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  footer {
+    color: #fff;
+    text-align: center;
+    padding-bottom: 50px;
+    z-index: 1;
+    display: block;
+    position: absolute; /* 추가 */
+    bottom: 0; /* 추가 */
+    width: 100%; 
+  }
+  
+  @media screen and (min-width: 1366px) and (orientation: landscape) {
+    .container {
+      width: 38vw;
+      height: auto;
+    }
+  
+    .post img {
+      width: calc(38vw - 50px);
+    }
+  
+    .gallery img {
+      height: calc(((38vw - 5px) / 3) - 5px);
+      width: calc(((38vw - 15px) / 3) - 5px);
+    }
+  }
+  

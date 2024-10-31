@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like a Tattoo on My Heart</title>
+    <meta name="description" content="i know this love of mine will never die" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/emojiMap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatLogs.js"></script>
+</head>
+
+<body>
+    <div id="calendar-container">
+        <div id="datepicker" class="hasDatepicker">
+            <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
+                style="display: block;">
+                <div class="button-container-calendar">
+                    <button id="previous">&#8249;</button>
+                    <button id="next">&#8250;</button>
+                </div>
+                <div class="ui-datepicker-title" id="monthAndYear">
+                    <span class="ui-datepicker-month">July</span><span class="ui-datepicker-year">2024</span>
+                </div>
+                <table class="ui-datepicker-calendar table-calendar" id="calendar">
+                    <thead id="thead-month">
+                        <tr>
+                            <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">S</span></th>
+                            <th scope="col"><span title="Monday">M</span></th>
+                            <th scope="col"><span title="Tuesday">T</span></th>
+                            <th scope="col"><span title="Wednesday">W</span></th>
+                            <th scope="col"><span title="Thursday">T</span></th>
+                            <th scope="col"><span title="Friday">F</span></th>
+                            <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">S</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                        <!-- Dates will be dynamically generated here -->
+                    </tbody>
+                </table>
+                <div id="dropdown-container" style="display: none;">
+                    <table id="log-selector" class="log-selector"></table>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container-calendar">
+            <label for="month">Jump To: </label>
+            <select id="month"></select>
+            <select id="year"></select>
+        </div>
+    </div>
+
+    <div class="outer-container">
+        <select id="date-selector"></select>
+        <div class="chat-container" id="chat-container">
+            <!-- 메시지 나타나는 곳 -->
+        </div>
+        <div id="quote-container"></div>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <input type="text" id="search-input" placeholder="search">
+    <button id="search-toggle-button" style="display: none;">Open Search</button>
+</body>
+
+</html>
