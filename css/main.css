@@ -1,8 +1,38 @@
 @charset "UTF-8";
 @font-face {
-    font-family: 'Pretendard';
-    src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
-    font-style: normal;
+  font-family: "MaruBuri";
+  font-weight: 100;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-ExtraLight.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MaruBuri";
+  font-weight: 300;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Light.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MaruBuri";
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MaruBuri";
+  font-weight: 500;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-SemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "MaruBuri";
+  font-weight: 700;
+  font-style: normal;
+  src: url(https://cdn.jsdelivr.net/gh/webfontworld/naver/MaruBuri-Bold.woff2) format("woff2");
+  font-display: swap;
 }
 * {
   margin: 0;
@@ -302,7 +332,7 @@ table {
   border-radius: 15px;
   position: relative;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: break-all;
   text-align: left;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -611,7 +641,6 @@ table {
 #mobile {
   display: block;
   position: absolute;
-  background-color: red;
 }
 
 /* 애플 아이메시지 스타일 */

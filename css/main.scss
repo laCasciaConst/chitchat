@@ -386,7 +386,7 @@ table {
   border-radius: 15px;
   position: relative;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: break-all;
   text-align: left;
   white-space: pre-wrap;
   overflow-wrap: break-word;
@@ -735,7 +735,7 @@ table {
 #mobile {
   display: block;
   position: absolute;
-  background-color: red;
+  // background-color: red;
 }
 
 /* 애플 아이메시지 스타일 */
