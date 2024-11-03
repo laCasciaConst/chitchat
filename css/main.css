@@ -334,8 +334,9 @@ table {
   word-wrap: break-word;
   word-break: break-all;
   text-align: left;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
+  white-space: pre-line;
+  hyphens: auto;
+  overflow-wrap: break-all;
   display: inline-block;
   max-width: 100%;
   background-color: #fff;
@@ -889,4 +890,3 @@ table {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
