@@ -10041,7 +10041,7 @@ const chatLogs = {
   ],
 
   "2024-12-05":[
-    { sender: "J", message: ""},
+    { sender: "J", message: "내 장례식엔 네가 오지 않았으면 좋겠어."},
     { sender: "L", message: ""},
     { sender: "J", message: ""},
     { sender: "L", message: ""},
