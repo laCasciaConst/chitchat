@@ -9723,6 +9723,7 @@ const chatLogs = {
   ],
 
   "2024-11-19":[
+    { sender: "L", message: "콘탄아 앉아봐 나 결혼식에 바라는거 개많아 들어봐 헤녀로 태어나서 씹손해보는게 백가지인데 이거라도 해야지 안그러니 드레스 레퍼런스도 엄청 많이 모아놨어 내가… 이거봐 나는 이 드레스가 정말 좋더라고 1935년 톱 햇 에서 진저 로저스가 입은 거야 이때 처음으로 머메이드 드레스라는게 나왔거든 너무 예쁘지 않니 그런데 사실 좀 과한감은 있어 난 큐빅은 별로 안좋아하는데 말이야 야외에서 할거면 아예 재질은 장식 없는 실크가 낫겠어 문제는 어어? 벌써 일어날 생각 버려 앉아있어 이런 심플한 드레스는 피지컬로 압살해야하는데 내가… 너도 알잖니 그래 왜그렇게 불쌍한 표정 지어 시발 꺼져 아 가라는 뜻 아니라고 시발 앉아"},
     { sender: "J", message: "240615_02.gif"},
     { sender: "J", message: "담배 피울 시간은 줘라. 재잘대는 건 벽에다 하시고."},
     { sender: "L", message: "그럴거면 벽이랑 결혼했지. 담배 피우면서 계속 들어."},
@@ -9830,17 +9831,12 @@ const chatLogs = {
   ],
 
   "2024-11-26":[
+    { sender: "L", message: "241126_01.png"},
+    { sender: "J", message: "난 울면서 그만하라고 하지 않아. 네 키가 워낙 작아서, 내가 제대로 서기만해도 뺨을 못때릴 걸?"},
+    { sender: "L", message: "너 사람 팔 길이가 몇 센치인지도 모르는 거야? 내가 무슨 난쟁이인 줄 알아? 그리고 네가 호크룩스 찾으러 갔다가 저주 걸린 덤블도어처럼 엉엉 우는 게 조건으로 박힌 거라고."},
+    { sender: "L", message: "⋯⋯아, 세상 문물에 어두워서 해리포터도 잘 모르지?"},
     { sender: "J", message: ""},
-    { sender: "L", message: ""},
-    { sender: "J", message: ""},
-    { sender: "L", message: ""},
-    { sender: "J", message: ""},
-    { sender: "L", message: ""},
-    { sender: "J", message: ""},
-    { sender: "L", message: ""},
-    { sender: "J", message: ""},
-    { sender: "L", message: ""},
-    { sender: "J", message: ""},
+    { sender: "J", message: "(아니나 다를까 뭔 개소리냐는 표정으로 바라보다가 고개를 젓는다.) 너 난쟁이 맞잖아."},
     { sender: "L", message: ""},
     { sender: "J", message: ""},
     { sender: "L", message: ""},
