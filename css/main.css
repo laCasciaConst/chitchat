@@ -278,7 +278,8 @@ table {
   width: auto;
   top: 50%;
   left: 50%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   transform: translate(-50%, -50%);
   border: #fff solid 1px;
 }
@@ -335,7 +336,8 @@ table {
   word-break: break-all;
   text-align: left;
   white-space: pre-line;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+          hyphens: auto;
   overflow-wrap: break-all;
   display: inline-block;
   max-width: 100%;
@@ -614,6 +616,7 @@ table {
   background: #fff;
   border: 2.5px solid black;
   z-index: 10;
+  width: -moz-max-content;
   width: max-content;
 }
 .dropdown-item {
@@ -813,6 +816,9 @@ table {
   }
 }
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: portrait) {
+  .message {
+    font-weight: 200;
+  }
   .outer-container {
     width: 85vw;
     height: 70vh;
@@ -844,6 +850,9 @@ table {
   }
 }
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
+  .message {
+    font-weight: 200;
+  }
   .outer-container {
     width: 80vw;
     height: 95vh;
@@ -867,6 +876,9 @@ table {
   }
 }
 @media screen and (max-width: 429.99px) and (min-width: 280px) and (orientation: portrait) {
+  .message {
+    font-weight: 200;
+  }
   .outer-container {
     width: 90vw;
     height: 80vh;
@@ -888,5 +900,4 @@ table {
   .reaction-icon {
     font-size: 0.9rem;
   }
-}
-
+}/*# sourceMappingURL=main.css.map */

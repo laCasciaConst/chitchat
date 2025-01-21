@@ -959,6 +959,10 @@ table {
 }
 
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: portrait) {
+  .message {
+    font-weight: 200;
+  }
+
   .outer-container {
     width: 85vw;
     height: 70vh;
@@ -998,6 +1002,10 @@ table {
 }
 
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
+  .message {
+    font-weight: 200;
+  }
+
   .outer-container {
     width: 80vw;
     height: 95vh;
@@ -1027,6 +1035,10 @@ table {
 }
 
 @media screen and (max-width: 429.99px) and (min-width: 280px) and (orientation: portrait) {
+  .message {
+    font-weight: 200;
+  }
+
   .outer-container {
     width: 90vw;
     height: 80vh;
