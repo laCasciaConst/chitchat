@@ -7313,7 +7313,7 @@ const chatLogs = {
     { sender: "L", message: "(네 이마 위로 삐져나온 앞머리 몇 가닥을 넘기며)\\너 따라다니면서 배운 게 있기는 하네. 그게 내게 비록 실기보다는 이론에 가까워도."},
     { sender: "J", message: "(네 머리를 귀 뒤로 넘겨주고는 목걸이를 만지작거린다.) 너는 실기 배울 일 없을 거야. 없게 할 거고."},
     { sender: "L", message: "(어깨를 으쓱이고 웃는다.) 그렇겠지."},
-    { sender: "J", message: "240911_06.gif"},
+    { sender: "J", message: "240507_001.gif"},
     { sender: "J", message: "잘 준비나 해."},
     { sender: "L", message: "⋯⋯너 그 얼굴 할 때마다 좀 못생긴 거 알아?"},
     { sender: "J", message: "...싸우기 싫다며?"},

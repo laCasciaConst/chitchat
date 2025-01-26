@@ -68,6 +68,12 @@ body {
   overflow: hidden;
 }
 
+main {
+  // pointer-events: none;
+  user-select: none; 
+  -webkit-user-drag: none;
+}
+
 table {
   border-spacing: 0;
   position: absolute;

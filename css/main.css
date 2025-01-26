@@ -56,6 +56,13 @@ body {
   overflow: hidden;
 }
 
+main {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
 table {
   border-spacing: 0;
   position: absolute;
