@@ -409,7 +409,7 @@ select#date-selector {
   border-radius: 15px;
   position: relative;
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: break-word;
   text-align: left;
   white-space: pre-line;
   hyphens: auto;
@@ -748,10 +748,8 @@ select#date-selector {
 #mobile {
   display: block;
   position: absolute;
-  // background-color: red;
 }
 
-/* 애플 아이메시지 스타일 */
 .message.apple-style {
   span {
     position: relative;
@@ -759,7 +757,6 @@ select#date-selector {
   }
 
   &.me {
-    // background-color: #007aff;
     background-color: #2591ea;
     color: white;
     border-radius: 28px 28px 5px 28px;
@@ -782,7 +779,6 @@ select#date-selector {
   color: #f0f0f0;
 }
 
-// Media queries
 @media screen and (min-width: 1366px) and (orientation: landscape) {
   #mobile {
     display: none !important;
@@ -798,7 +794,7 @@ select#date-selector {
   }
 
   .message {
-    padding: 13px;
+    padding: 12px;
     font-size: 0.9rem;
     font-weight: 500;
     i {
@@ -859,8 +855,11 @@ select#date-selector {
       max-width: 370px;
     }
   }
-}
 
+  .quote-text {
+    font-size: 0.9rem;
+  }
+}
 
 select#date-selector {
   font-size: 14px !important;
@@ -904,6 +903,10 @@ select#date-selector {
         padding: 12.5px 14px 11.5px 13px;
       }
     }
+  }
+
+  .quote-text {
+    font-size: 14px;
   }
 
   .reaction-box {
@@ -953,6 +956,10 @@ select#date-selector {
         padding: 12.5px 13px 11.5px 13px;
       }
     }
+  }
+
+  .quote-text {
+    font-size: 14px;
   }
 
   .reaction-box {
@@ -1012,6 +1019,10 @@ select#date-selector {
         padding: 12.5px 13px 11.5px 13px;
       }
     }
+  }
+
+  .quote-text {
+    font-size: 15px;
   }
 
   .reaction-box {
@@ -1077,6 +1088,10 @@ select#date-selector {
     }
   }
 
+  .quote-text {
+    font-size: 14px;
+  }
+
   .reaction-box {
     width: 1.5rem;
     height: 1.5rem;
@@ -1138,6 +1153,10 @@ select#date-selector {
     }
   }
 
+  .quote-text {
+    font-size: 12px;
+  }
+
   .reaction-box {
     width: 1.3rem;
     height: 1.3rem;
@@ -1185,6 +1204,10 @@ select#date-selector {
         padding: 11.5px 13px 11.5px 13px;
       }
     }
+  }
+
+  .quote-text {
+    font-size: 13px;
   }
 
   .reaction-box {
