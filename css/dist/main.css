@@ -409,7 +409,7 @@ table {
 }
 .date-divider span {
   font-size: 0.8rem;
-  color: #888;
+  color: #aaa;
 }
 
 #datepicker {
@@ -536,7 +536,7 @@ table {
   color: #af0909;
 }
 #calendar-container .ui-datepicker-calendar td.has-events:hover a {
-  color: #797979;
+  color: #aaa;
 }
 #calendar-container .ui-datepicker-calendar td .ui-state-default {
   cursor: pointer;
@@ -634,7 +634,7 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
-  color: #888;
+  color: #aaa;
   display: none;
 }
 
