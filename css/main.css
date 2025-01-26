@@ -1004,7 +1004,7 @@ select#date-selector {
     height: 90vh;
   }
   .outer-container .chat-container {
-    padding: 0 5px 10px 10px;
+    padding: 0 5px 10px 5px;
   }
   .message-container {
     max-width: 80%;
