@@ -272,7 +272,6 @@ $(document).ready(function () {
     // 초기 설정
     $("#chat-container").empty();
     $("#no-results").hide();
-    $("#search-toggle-button").css("display", "block");
 
     if (!selectedDate) {
       selectedDate = $("#date-selector").val();

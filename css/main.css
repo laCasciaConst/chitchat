@@ -42,7 +42,7 @@
 
 body {
   font-family: "Pretendard", Apple Color Emoji;
-  font-weight: 440;
+  font-weight: 400;
   background-color: #000;
   display: flex;
   justify-content: center;
@@ -99,6 +99,10 @@ table {
   display: flex;
   visibility: hidden;
   flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .outer-container .chat-container {
   flex-grow: 1;
@@ -639,7 +643,6 @@ table {
   transform: translate(-50%, -50%);
   font-size: 20px;
   color: #888;
-  display: none;
 }
 
 #mobile {
@@ -665,6 +668,11 @@ table {
   text-align: left;
 }
 
+#warning {
+  visibility: hidden;
+  color: #f0f0f0;
+}
+
 @media screen and (min-width: 1366px) and (orientation: landscape) {
   #mobile {
     display: none !important;
@@ -681,7 +689,9 @@ table {
     font-size: 1rem;
   }
   .message i {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #797979;
   }
   .reaction-box {
     width: 2rem;
@@ -729,9 +739,12 @@ table {
   .message {
     padding: 11px;
     font-size: 14px;
+    font-weight: 300;
   }
   .message i {
-    font-size: 12px;
+    font-size: 12.7px;
+    font-weight: 300;
+    color: #797979;
   }
   .reaction-box {
     width: 2rem;
@@ -760,9 +773,12 @@ table {
   }
   .message {
     font-size: 14px;
+    font-weight: 400;
   }
   .message i {
     font-size: 11.5px;
+    font-weight: 400;
+    color: #797979;
   }
   .reaction-box {
     width: 1.8rem;
@@ -792,11 +808,18 @@ table {
   .message-container {
     max-width: 75%;
   }
+  .message-container.has-reaction.long-message .timestamp-label {
+    top: -20px !important;
+    max-width: none;
+  }
   .message {
     font-size: 15px;
+    font-weight: 300;
   }
   .message i {
     font-size: 13px;
+    font-weight: 400;
+    color: #797979;
   }
   .reaction-box {
     width: 1.7rem;
@@ -825,6 +848,13 @@ table {
   }
   .message-container {
     max-width: 75%;
+  }
+  .message-container .timestamp-label {
+    font-size: 0.7rem;
+  }
+  .message-container.has-reaction.long-message .timestamp-label {
+    top: -20px !important;
+    max-width: none;
   }
   .message {
     font-size: 13px;
@@ -860,6 +890,13 @@ table {
   .message-container {
     max-width: 70%;
   }
+  .message-container .timestamp-label {
+    font-size: 0.7rem;
+  }
+  .message-container.has-reaction.long-message .timestamp-label {
+    top: -20px !important;
+    max-width: none;
+  }
   .message {
     font-size: 12px;
   }
@@ -875,7 +912,7 @@ table {
     font-size: 0.8rem;
   }
 }
-@media screen and (max-width: 429.99px) and (min-width: 280px) and (orientation: portrait) {
+@media screen and (max-width: 429.99px) and (min-width: 350px) and (orientation: portrait) {
   .message {
     font-weight: 200;
   }
@@ -886,11 +923,20 @@ table {
   .message-container {
     max-width: 80%;
   }
+  .message-container .timestamp-label {
+    font-size: 0.7rem;
+  }
+  .message-container.has-reaction.long-message .timestamp-label {
+    top: -20px !important;
+    max-width: none;
+  }
   .message {
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: 300;
   }
   .message i {
-    font-size: 9.5px;
+    font-size: 12px;
+    color: #797979;
   }
   .reaction-box {
     width: 1.5rem;
@@ -899,5 +945,19 @@ table {
   }
   .reaction-icon {
     font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 349.99px) {
+  main {
+    visibility: hidden;
+  }
+  #warning {
+    visibility: visible;
+    width: 70vw;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }/*# sourceMappingURL=main.css.map */
