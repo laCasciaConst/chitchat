@@ -28,7 +28,6 @@
                 </span>
         </div>
         <main>
-                <button id="search-toggle-button" style="display: none;">Open Search</button>
                 <div id="calendar-container">
                         <div id="datepicker" class="hasDatepicker">
                                 <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
@@ -40,7 +39,6 @@
                                         <div class="footer-container-calendar">
                                                 <label for="month">Jump To: </label>
                                                 <select id="month"></select>
-                                                <select id="year"></select>
                                         </div>
                                         <div class="button-container-calendar">
                                                 <button id="previous">&#8249;</button>
@@ -1507,6 +1505,7 @@
 
                 <div class="outer-container">
                         <select id="date-selector"></select>
+                        <input type="text" id="search-input" placeholder="search">
                         <div id="no-results" style="display: none; text-align: center; margin-top: 20px;">
                                 No Results
                         </div>
@@ -1515,7 +1514,6 @@
                                 <!-- 메시지 나타나는 곳 -->
                         </div>
                         <div id="quote-container"></div>
-                        <div id="tooltip" class="tooltip"></div>
                 </div>
 
                 <!-- <div class="outer-container" id="mobile">
@@ -1531,8 +1529,8 @@
                 <div id="quote-container"></div>
                 <div id="tooltip" class="tooltip"></div>
         </div> -->
+                <div id="tooltip" class="tooltip"></div>
 
-                <input type="text" id="search-input" placeholder="search">
                 <div id="image-modal" class="modal">
                         <div role="presentation">
                                 <button class="close">
@@ -1544,65 +1542,88 @@
         </main>
         <script>
                 $(document).ready(function () {
-                        const months = ["may_2024", "june_2024", "july_2024", "august_2024", "september_2024", "october_2024", "november_2024", "december_2024", "january_2025"];
-                        const monthNames = ["May", "June", "July", "August", "September", "October", "November", "December", "January"];
-                        let currentMonthIndex = months.length - 1;
+                        const monthsByYear = {
+                                2024: ["may_2024", "june_2024", "july_2024", "august_2024", "september_2024", "october_2024", "november_2024", "december_2024"],
+                                2025: ["january_2025"]
+                        };
+
+                        const monthNamesByYear = {
+                                2024: ["May", "June", "July", "August", "September", "October", "November", "December"],
+                                2025: ["January"]
+                        };
+
+                        // 현재 날짜를 기준으로 연도와 월 초기화
+                        const today = new Date();
+                        let currentYear = today.getFullYear();
+                        let currentMonthIndex = -1;
+
+                        // 현재 연도가 monthsByYear에 있는지 확인
+                        if (monthsByYear[currentYear]) {
+                                currentMonthIndex = monthsByYear[currentYear].findIndex((monthId) => {
+                                        const monthName = monthId.split("_")[0]; // "may", "june", 등
+                                        return monthName.toLowerCase() === today.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+                                });
+                        }
+
+                        // 만약 현재 월이 없거나 연도가 맞지 않으면 기본값 설정 (2024년 마지막 달)
+                        if (currentMonthIndex === -1 || !monthsByYear[currentYear]) {
+                                currentYear = 2024;
+                                currentMonthIndex = monthsByYear[currentYear].length - 1;
+                        }
 
                         $(".calendar-body").hide();
 
                         const showCurrentMonth = () => {
                                 $(".calendar-body").hide();
+                                const months = monthsByYear[currentYear];
+                                const monthNames = monthNamesByYear[currentYear];
                                 $("#" + months[currentMonthIndex]).show();
                                 $("#monthAndYear .ui-datepicker-month").text(monthNames[currentMonthIndex]);
-                                $("#monthAndYear .ui-datepicker-year").text("2024");
-                                console.log("Showing:", months[currentMonthIndex]);
+                                $("#monthAndYear .ui-datepicker-year").text(currentYear);
+                                console.log("Showing:", months[currentMonthIndex], currentYear);
                         };
 
                         showCurrentMonth();
 
                         $("#previous").off("click").on("click", function () {
                                 if (currentMonthIndex > 0) {
-                                        $("#" + months[currentMonthIndex]).hide();
                                         currentMonthIndex--;
-                                        showCurrentMonth();
+                                } else if (currentYear > 2024) {
+                                        currentYear--;
+                                        currentMonthIndex = monthsByYear[currentYear].length - 1;
                                 }
+                                showCurrentMonth();
                         });
 
                         $("#next").off("click").on("click", function () {
-                                if (currentMonthIndex < months.length - 1) {
-                                        $("#" + months[currentMonthIndex]).hide();
+                                if (currentMonthIndex < monthsByYear[currentYear].length - 1) {
                                         currentMonthIndex++;
-                                        showCurrentMonth();
+                                } else if (currentYear < 2025) {
+                                        currentYear++;
+                                        currentMonthIndex = 0;
                                 }
+                                showCurrentMonth();
                         });
 
                         const populateJumpToSelectors = () => {
                                 const monthSelect = $("#month");
                                 const yearSelect = $("#year");
-
-                                monthNames.forEach((month, index) => {
-                                        monthSelect.append(new Option(month, index));
+                                Object.keys(monthNamesByYear).forEach((year) => {
+                                        yearSelect.append(new Option(year, year));
+                                        monthNamesByYear[year].forEach((month, index) => {
+                                                monthSelect.append(new Option(`${month} ${year}`, `${index}_${year}`));
+                                        });
                                 });
-
-                                yearSelect.append(new Option("2024", "2024", "2025"));
                         };
 
                         populateJumpToSelectors();
 
                         $("#month, #year").change(function () {
-                                const selectedMonth = parseInt($("#month").val());
-                                const selectedYear = $("#year").val();
-
-                                const parsedId = `${monthNames[selectedMonth].toLowerCase()}_${selectedYear}`;
-
-                                $(".calendar-body").hide();
-                                $("#" + parsedId).show();
-                                console.log("Jumping to:", parsedId);
-
-                                currentMonthIndex = selectedMonth;
-
-                                $("#monthAndYear .ui-datepicker-month").text(monthNames[selectedMonth]);
-                                $("#monthAndYear .ui-datepicker-year").text(selectedYear);
+                                const selectedValue = $("#month").val();
+                                const [selectedMonthIndex, selectedYear] = selectedValue.split("_");
+                                currentYear = parseInt(selectedYear);
+                                currentMonthIndex = parseInt(selectedMonthIndex);
+                                showCurrentMonth();
                         });
 
                         $(document).on('click', '.two-image img', function () {

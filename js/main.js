@@ -514,7 +514,7 @@ $(document).ready(function () {
 
           if (isLastInGroup) {
             if (senderClass === "me") {
-              messageDiv.css("border-radius", "28px 28px 5px 28px");
+              messageDiv.css("border-radius", "25px 25px 5px 25px");
             } else {
               messageDiv.css("border-radius", "25px 25px 25px 5px");
             }
@@ -531,9 +531,9 @@ $(document).ready(function () {
             messageContainer.append(reactionBox);
             messageContainer.addClass("has-reaction");
           }
-  
+
           $("#chat-container").append(messageContainer);
-  
+
           // 이벤트 핸들러 추가: 검색 결과 메시지 클릭 시 해당 날짜로 이동
           messageContainer.on("click", function () {
             console.log("Message clicked:", date); // 디버깅용 콘솔 로그
@@ -606,14 +606,23 @@ $(document).ready(function () {
 
           messageDiv.hover(
             function (event) {
-              if ($(this).attr("data-tip")) {
-                $("#tooltip").html($(this).attr("data-tip"));
-                $("#tooltip").css({
-                  top: event.pageY + 10 + "px",
-                  left: event.pageX + 10 + "px",
-                });
-                $("#tooltip").show();
+              const tooltip = $("#tooltip");
+              let top = event.pageY + 10; 
+              let left = event.pageX + 10; 
+              
+              const tooltipWidth = tooltip.outerWidth();
+              const tooltipHeight = tooltip.outerHeight();
+
+              if (left + tooltipWidth > $(window).width()) {
+                left = event.pageX - tooltipWidth - 10; 
               }
+              if (top + tooltipHeight > $(window).height()) {
+                top = event.pageY - tooltipHeight - 10; 
+              }
+
+              tooltip.html($(this).attr("data-tip"));
+              tooltip.css({ top: `${top}px`, left: `${left}px` });
+              tooltip.show();
             },
             function () {
               $("#tooltip").hide();

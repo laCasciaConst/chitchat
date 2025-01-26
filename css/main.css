@@ -117,6 +117,15 @@ table {
   overflow: auto;
 }
 
+select#date-selector {
+  font-weight: 500;
+  font-family: inherit;
+}
+select#date-selector option {
+  font-weight: inherit;
+  font-family: inherit;
+}
+
 .message-container {
   display: flex;
   flex-direction: column;
@@ -381,21 +390,12 @@ table {
 
 #search-input {
   margin-bottom: 10px;
-  width: 20vw;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   border: 1px solid #ccc;
   position: absolute;
   display: flex;
-  right: 2vw;
-  display: none;
-}
-
-#search-toggle-button {
-  position: absolute;
-  right: 2vw;
-  top: 40px;
-  display: none;
+  right: 2%;
 }
 
 .date-divider {
@@ -452,7 +452,7 @@ table {
 }
 
 .tooltip {
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   border: 2px solid black;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
@@ -665,6 +665,9 @@ table {
   border-radius: 28px 28px 5px 28px;
   text-align: left;
 }
+.message.apple-style.me i {
+  color: #aaa;
+}
 .message.apple-style.friend {
   background-color: #373434;
   color: white;
@@ -690,12 +693,19 @@ table {
   }
   .message {
     padding: 13px;
-    font-size: 1rem;
-  }
-  .message i {
     font-size: 0.9rem;
     font-weight: 500;
+  }
+  .message i {
+    font-size: 0.8rem;
+    font-weight: 500;
     color: #797979;
+  }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 12.5px 14px 11.5px 13px;
   }
   .reaction-box {
     width: 2rem;
@@ -707,8 +717,8 @@ table {
   }
   .tooltip {
     padding: 12px;
-    max-width: 400px;
-    font-size: 1.1rem;
+    max-width: 300px;
+    font-size: 0.85rem;
     font-weight: 300;
   }
   .tooltip img {
@@ -729,6 +739,17 @@ table {
     max-width: 370px;
   }
 }
+select#date-selector {
+  font-size: 14px !important;
+  width: 65% !important;
+  height: 4% !important;
+}
+
+#search-input {
+  width: 32% !important;
+  height: 4% !important;
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1365.99px) and (orientation: landscape) {
   #mobile {
     display: none !important;
@@ -743,12 +764,18 @@ table {
   .message {
     padding: 11px;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 500;
   }
   .message i {
-    font-size: 12.7px;
-    font-weight: 300;
+    font-size: 13px;
+    font-weight: 400;
     color: #797979;
+  }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 12.5px 14px 11.5px 13px;
   }
   .reaction-box {
     width: 2rem;
@@ -777,12 +804,18 @@ table {
   }
   .message {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
   }
   .message i {
     font-size: 11.5px;
     font-weight: 400;
     color: #797979;
+  }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 12.5px 13px 11.5px 13px;
   }
   .reaction-box {
     width: 1.8rem;
@@ -795,7 +828,7 @@ table {
   .tooltip {
     padding: 10px;
     max-width: 200px;
-    font-size: 13px;
+    font-size: 12px;
   }
   .tooltip img {
     max-width: 180px;
@@ -825,6 +858,12 @@ table {
     font-weight: 400;
     color: #797979;
   }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 12.5px 13px 11.5px 13px;
+  }
   .reaction-box {
     width: 1.7rem;
     height: 1.7rem;
@@ -836,12 +875,24 @@ table {
   .tooltip {
     padding: 10px;
     max-width: 200px;
-    font-size: 13px;
+    font-size: 12px;
   }
   .tooltip img {
     max-width: 180px;
   }
 }
+select#date-selector {
+  font-size: 13px;
+  width: 65%;
+  height: 4%;
+  border-radius: 5px 0 0 5px;
+}
+
+#search-input {
+  width: 33%;
+  height: 2%;
+}
+
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: portrait) {
   .outer-container {
     width: 85vw;
@@ -858,11 +909,13 @@ table {
     max-width: none;
   }
   .message {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
   }
   .message i {
-    font-size: 11px;
+    font-size: 12.7px;
+    font-weight: 400;
+    color: #797979;
   }
   .reaction-box {
     width: 1.5rem;
@@ -882,6 +935,9 @@ table {
   }
 }
 @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
+  .message {
+    font-weight: 400;
+  }
   .outer-container {
     width: 80vw;
     height: 95vh;
@@ -898,10 +954,17 @@ table {
   }
   .message {
     font-size: 12px;
-    font-weight: 400;
   }
   .message i {
     font-size: 9.5px;
+    font-weight: 400;
+    color: #797979;
+  }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 11.5px 13px 11.5px 13px;
   }
   .reaction-box {
     width: 1.3rem;
@@ -928,13 +991,19 @@ table {
     max-width: none;
   }
   .message {
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 13.5px;
+    font-weight: 400;
   }
   .message i {
-    font-size: 0.9rem;
-    color: #414141;
-    font-weight: 400;
+    font-size: 12.5px;
+    color: #9d9d9d;
+    font-weight: 500;
+  }
+  .message.apple-style.friend {
+    padding: 11px 14px 12px 10px;
+  }
+  .message.apple-style.me {
+    padding: 11.5px 13px 11.5px 13px;
   }
   .reaction-box {
     width: 1.5rem;
@@ -943,6 +1012,14 @@ table {
   }
   .reaction-icon {
     font-size: 0.9rem;
+  }
+  .tooltip {
+    padding: 7px;
+    max-width: 150px;
+    font-size: 11px;
+  }
+  .tooltip img {
+    max-width: 136px;
   }
 }
 @media screen and (max-width: 349.99px) {
