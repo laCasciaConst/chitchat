@@ -1094,12 +1094,13 @@ table {
   }
 
   .message {
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
 
     i {
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: $primary-color;
+      font-weight: 400;
     }
   }
 

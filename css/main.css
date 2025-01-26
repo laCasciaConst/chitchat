@@ -928,12 +928,13 @@ table {
     max-width: none;
   }
   .message {
-    font-size: 0.9rem;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 500;
   }
   .message i {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #414141;
+    font-weight: 400;
   }
   .reaction-box {
     width: 1.5rem;
