@@ -857,7 +857,7 @@ select#date-selector {
   }
 
   .quote-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -1058,10 +1058,10 @@ select#date-selector {
   height: 2%;
 }
 
-@media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: portrait) {
+@media screen and (max-width: 766.99px) and (min-width: 430px) {
   .outer-container {
-    width: 85vw;
-    height: 70vh;
+    width: 90vw;
+    height: 90vh;
   }
 
   .message-container {
@@ -1113,60 +1113,60 @@ select#date-selector {
   }
 }
 
-@media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
-  .message {
-    font-weight: 400;
-  }
+// @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
+//   .message {
+//     font-weight: 400;
+//   }
 
-  .outer-container {
-    width: 80vw;
-    height: 95vh;
-  }
+//   .outer-container {
+//     width: 80vw;
+//     height: 95vh;
+//   }
 
-  .message-container {
-    max-width: 70%;
-    .timestamp-label {
-      font-size: 0.7rem;
-    }
-    &.has-reaction {
-      &.long-message .timestamp-label {
-        top: -20px !important;
-        max-width: none;
-      }
-    }
-  }
+//   .message-container {
+//     max-width: 70%;
+//     .timestamp-label {
+//       font-size: 0.7rem;
+//     }
+//     &.has-reaction {
+//       &.long-message .timestamp-label {
+//         top: -20px !important;
+//         max-width: none;
+//       }
+//     }
+//   }
 
-  .message {
-    font-size: 12px;
-    i {
-      font-size: 9.5px;
-      font-weight: 400;
-      color: #aaa;
-    }
-    &.apple-style {
-      &.friend {
-        padding: 11px 14px 12px 10px;
-      }
-      &.me {
-        padding: 11.5px 13px 11.5px 13px;
-      }
-    }
-  }
+//   .message {
+//     font-size: 12px;
+//     i {
+//       font-size: 9.5px;
+//       font-weight: 400;
+//       color: #aaa;
+//     }
+//     &.apple-style {
+//       &.friend {
+//         padding: 11px 14px 12px 10px;
+//       }
+//       &.me {
+//         padding: 11.5px 13px 11.5px 13px;
+//       }
+//     }
+//   }
 
-  .quote-text {
-    font-size: 12px;
-  }
+//   .quote-text {
+//     font-size: 12px;
+//   }
 
-  .reaction-box {
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 6px;
-  }
+//   .reaction-box {
+//     width: 1.3rem;
+//     height: 1.3rem;
+//     border-radius: 6px;
+//   }
 
-  .reaction-icon {
-    font-size: 0.8rem;
-  }
-}
+//   .reaction-icon {
+//     font-size: 0.8rem;
+//   }
+// }
 
 @media screen and (max-width: 429.99px) and (min-width: 350px) and (orientation: portrait) {
   .outer-container {

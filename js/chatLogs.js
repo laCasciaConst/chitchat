@@ -10152,7 +10152,7 @@ const chatLogs = {
   ],
 
   "2024-12-31":[
-    { sender: "L", message: ""},
+    { sender: "L", message: "241231_01.gif"},
     { sender: "J", message: "너 진짜 이상하게 운다. 알아?"},
     { sender: "L", message: "우는 년이 나쁘냐? 울리는 새끼가 개새끼지."},
     { sender: "J", message: "나쁘다곤 안했어. 이상하다고 했지."},
