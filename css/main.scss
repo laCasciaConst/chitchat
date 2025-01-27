@@ -272,12 +272,12 @@ select#date-selector {
     margin-bottom: 0 !important;
 
     &.height-adjusted {
-      height: calc(100% ─20px);
+      height: calc(100% -20px);
     }
 
     &:not(.has-reaction) {
       #chat-container {
-        height: calc(100% ─20px);
+        height: calc(100% -20px);
       }
     }
 

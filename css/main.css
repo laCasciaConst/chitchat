@@ -239,10 +239,10 @@ select#date-selector option {
   margin-bottom: 0 !important;
 }
 .message-container.last-message.height-adjusted {
-  height: calc(100% ─20px);
+  height: calc(100% -20px);
 }
 .message-container.last-message:not(.has-reaction) #chat-container {
-  height: calc(100% ─20px);
+  height: calc(100% -20px);
 }
 .message-container.last-message.no-height-adjust {
   margin-bottom: 0;
