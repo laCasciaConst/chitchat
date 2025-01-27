@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "MaruBuri";
   font-weight: 100;
@@ -238,10 +239,10 @@ select#date-selector option {
   margin-bottom: 0 !important;
 }
 .message-container.last-message.height-adjusted {
-  height: calc(100% - 20px);
+  height: calc(100% ─20px);
 }
 .message-container.last-message:not(.has-reaction) #chat-container {
-  height: calc(100% - 20px);
+  height: calc(100% ─20px);
 }
 .message-container.last-message.no-height-adjust {
   margin-bottom: 0;
@@ -356,11 +357,11 @@ select#date-selector option {
   border-radius: 15px;
   position: relative;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: normal;
   text-align: left;
-  white-space: pre-line;
+  white-space: normal;
   -webkit-hyphens: auto;
-          hyphens: auto;
+  hyphens: auto;
   overflow-wrap: break-all;
   display: inline-block;
   max-width: 100%;
@@ -691,7 +692,7 @@ select#date-selector option {
   }
   .outer-container {
     width: 30vw;
-    height: 90vh;
+    height: 95vh;
   }
   .message-container {
     max-width: 73%;
