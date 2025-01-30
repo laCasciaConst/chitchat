@@ -373,6 +373,9 @@ select#date-selector option {
 .message em {
   font-weight: 700;
 }
+.message.hidden {
+  background-color: transparent;
+}
 
 .rounded-media {
   width: 100%;
@@ -444,6 +447,10 @@ select#date-selector option {
   font-size: 5rem;
   display: block;
   text-align: center;
+}
+.emoji img {
+  width: 5rem;
+  height: 5rem;
 }
 
 .quote-box {
@@ -684,6 +691,13 @@ select#date-selector option {
 #warning {
   visibility: hidden;
   color: #f0f0f0;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background-color: black;
 }
 
 @media screen and (min-width: 1366px) and (orientation: landscape) {

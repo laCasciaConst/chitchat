@@ -428,6 +428,10 @@ select#date-selector {
   em {
     font-weight: 700;
   }
+
+  &.hidden {
+    background-color: transparent;
+  }
 }
 
 .rounded-media {
@@ -507,6 +511,10 @@ select#date-selector {
   font-size: 5rem;
   display: block;
   text-align: center;
+  img {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .quote-box {
@@ -532,7 +540,6 @@ select#date-selector {
   font-family: "pretendard";
   padding: 5px;
 }
-
 //달력
 #calendar-container {
   width: 40rem;
@@ -781,6 +788,13 @@ select#date-selector {
 #warning {
   visibility: hidden;
   color: #f0f0f0;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background-color: black;
 }
 
 @media screen and (min-width: 1366px) and (orientation: landscape) {

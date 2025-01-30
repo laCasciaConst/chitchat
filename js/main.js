@@ -217,8 +217,9 @@ $(document).ready(function () {
   const getMediaPath = (fileName) => {
     const extensions = ["jpg", "jpeg", "png", "gif", "mp4"];
     const fileExtension = fileName.split(".").pop().toLowerCase();
+
     if (extensions.includes(fileExtension)) {
-      return `./src/img/${fileName}`;
+      const path = `./src/img/${fileName}`;
       console.log(`File path: ${path}`);
       return path;
     }
@@ -248,17 +249,6 @@ $(document).ready(function () {
     }
     return content;
   };
-
-  // const processMessage = (message) => {
-  //   Object.keys(emojiMap).forEach((code) => {
-  //     const emojiImage = emojiMap[code];
-  //     if (message.includes(code)) {
-  //       console.log(`Replacing ${code} with ${emojiImage}`);
-  //     }
-  //     message = message.replace(new RegExp(code, "g"), emojiImage);
-  //   });
-  //   return message;
-  // };
 
   const processMessage = (message) => {
     return message;
@@ -395,8 +385,12 @@ $(document).ready(function () {
             messageContainer.append(messageDiv);
           } else if (mediaPath.endsWith(".mp4")) {
             messageDiv = $("<video controls>")
-              .attr("src", mediaPath)
-              .addClass("rounded-media");
+              .append(
+                $("<source>").attr("src", mediaPath).attr("type", "video/mp4")
+              )
+              .addClass("rounded-media")
+              .attr("preload", "auto")
+              .attr("playsinline", "");
             messageContainer.append(messageDiv);
           } else if (isEmojiOnly(chat.message)) {
             messageDiv = $("<div></div>").addClass("emoji").text(chat.message);
@@ -581,8 +575,12 @@ $(document).ready(function () {
           messageContainer.append(messageDiv);
         } else if (mediaPath.endsWith(".mp4")) {
           messageDiv = $("<video controls>")
-            .attr("src", mediaPath)
-            .addClass("rounded-media");
+            .append(
+              $("<source>").attr("src", mediaPath).attr("type", "video/mp4")
+            )
+            .addClass("rounded-media")
+            .attr("preload", "auto")
+            .attr("playsinline", "");
           messageContainer.append(messageDiv);
         } else if (isEmojiOnly(chat.message)) {
           messageDiv = $("<div></div>").addClass("emoji").text(chat.message);
@@ -607,19 +605,19 @@ $(document).ready(function () {
           messageDiv.hover(
             function (event) {
               const tooltip = $("#tooltip");
-              let top = event.pageY + 10; 
-              let left = event.pageX + 10; 
-              
+              let top = event.pageY + 10;
+              let left = event.pageX + 10;
+
               const tooltipWidth = tooltip.outerWidth();
               const tooltipHeight = tooltip.outerHeight();
-
+          
               if (left + tooltipWidth > $(window).width()) {
-                left = event.pageX - tooltipWidth - 10; 
+                left = event.pageX - tooltipWidth - 10;
               }
               if (top + tooltipHeight > $(window).height()) {
-                top = event.pageY - tooltipHeight - 10; 
+                top = event.pageY - tooltipHeight - 10;
               }
-
+          
               tooltip.html($(this).attr("data-tip"));
               tooltip.css({ top: `${top}px`, left: `${left}px` });
               tooltip.show();
