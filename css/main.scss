@@ -422,8 +422,11 @@ select#date-selector {
   font-weight: 400;
 
   i {
-    font-style: italic;
     font-weight: 200;
+  }
+
+  em {
+    font-weight: 700;
   }
 }
 
@@ -795,7 +798,7 @@ select#date-selector {
   }
 
   .message {
-    padding: 12px;
+    padding: 12.5px;
     font-size: 0.9rem;
     font-weight: 500;
     i {
@@ -894,7 +897,7 @@ select#date-selector {
   }
 
   .message {
-    padding: 11px;
+    padding: 12px;
     font-size: 14px;
     font-weight: 500;
     i {
@@ -919,7 +922,7 @@ select#date-selector {
   }
 
   .reaction-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .tooltip {
@@ -970,6 +973,7 @@ select#date-selector {
   }
 
   .message {
+    padding: 11.5px;
     font-size: 14px;
     font-weight: 500;
     i {
@@ -1020,7 +1024,7 @@ select#date-selector {
   }
 
   .reaction-icon {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .tooltip {
@@ -1034,82 +1038,104 @@ select#date-selector {
   }
 }
 
-// @media screen and (max-width: 1024px) and (min-width: 767px) and (orientation: landscape) {
-//   #mobile {
-//     display: none !important;
-//   }
+@media screen and (max-width: 1024px) and (min-width: 600px) {
+  #mobile {
+    display: none !important;
+  }
 
-//   .outer-container {
-//     width: 55vw;
-//     height: 90vh;
-//   }
+  .outer-container {
+    width: 55vw;
+    height: 90vh;
+  }
 
-//   .message-container {
-//     max-width: 75%;
-//     &.has-reaction {
-//       &.long-message .timestamp-label {
-//         top: -20px !important;
-//         max-width: none;
-//       }
-//     }
-//   }
+  .message-container {
+    max-width: 75%;
+    &.has-reaction {
+      &.long-message .timestamp-label {
+        top: -20px !important;
+        max-width: none;
+      }
+    }
+  }
 
-//   .message {
-//     font-size: 15px;
-//     font-weight: 500;
-//     i {
-//       font-size: 13px;
-//       font-weight: 400;
-//       color: #aaa;
-//     }
-//     &.apple-style {
-//       &.friend {
-//         padding: 11px 14px 12px 10px;
-//       }
-//       &.me {
-//         padding: 12.5px 13px 11.5px 13px;
-//       }
-//     }
-//   }
+  .message {
+    font-size: 13.5px;
+    font-weight: 500;
+    i {
+      font-size: 13px;
+      font-weight: 400;
+      color: #aaa;
+    }
+    &.apple-style {
+      &.friend {
+        padding: 11px 14px 12px 10px;
+      }
+      &.me {
+        padding: 12.5px 13px 11.5px 13px;
+      }
+    }
+  }
 
-//   .quote-text {
-//     font-size: 15px;
-//   }
+  .has-quote {
+    .quote-box {
+      top: 20px;
+      padding: 10px 10px 25px 10px;
+      position: relative;
+    }
 
-//   .reaction-box {
-//     width: 1.7rem;
-//     height: 1.7rem;
-//     border-radius: 8px;
-//   }
+    &.friend {
+      .quote-box {
+        left: 15px;
+        max-width: 380px;
+      }
+    }
 
-//   .reaction-icon {
-//     font-size: 1rem;
-//   }
+    &.me {
+      .quote-box {
+        right: 15px;
+        max-width: 370px;
+      }
+    }
 
-//   .tooltip {
-//     padding: 10px;
-//     max-width: 200px;
-//     font-size: 12px;
+    .quote-text {
+      font-size: 13px;
+    }
+  }
 
-//     img {
-//       max-width: 180px;
-//     }
-//   }
-// }
+  .reaction-box {
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 8px;
+  }
 
-// select#date-selector {
-//   font-size: 13px;
-//   width: 65%;
-//   height: 4%;
-//   border-radius: 5px 0 0 5px;
-// }
+  .reaction-icon {
+    font-size: 1rem;
+  }
 
-// #search-input {
-//   width: 33%;
-//   height: 2%;
-// }
+  .tooltip {
+    padding: 10px;
+    max-width: 200px;
+    font-size: 12px;
 
-@media screen and (max-width: 766.99px) and (min-width: 430px) {
+    img {
+      max-width: 180px;
+    }
+  }
+}
+
+select#date-selector {
+  font-size: 13px;
+  width: 65%;
+  height: 4%;
+  border-radius: 5px 0 0 5px;
+}
+
+#search-input {
+  width: 33%;
+  height: 2%;
+}
+
+@media screen and (max-width: 599.99px) and (min-width: 430px) {
   .outer-container {
     width: 90vw;
     height: 90vh;
@@ -1129,6 +1155,7 @@ select#date-selector {
   }
 
   .message {
+    padding: 12px;
     font-size: 14px;
     font-weight: 400;
 
@@ -1172,7 +1199,7 @@ select#date-selector {
   }
 
   .reaction-icon {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .tooltip {
@@ -1241,7 +1268,7 @@ select#date-selector {
 //   }
 // }
 
-@media screen and (max-width: 429.99px) and (min-width: 350px) and (orientation: portrait) {
+@media screen and (max-width: 429.99px) and (min-width: 350px) {
   .outer-container {
     width: 90vw;
     height: 90vh;
@@ -1315,16 +1342,16 @@ select#date-selector {
   }
 
   .reaction-icon {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .tooltip {
     padding: 7px;
-    max-width: 150px;
+    max-width: 220px;
     font-size: 11px;
 
     img {
-      max-width: 136px;
+      max-width: 206px;
     }
   }
 }
