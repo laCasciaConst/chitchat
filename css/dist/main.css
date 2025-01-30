@@ -124,7 +124,7 @@ table {
 }
 .message-container .timestamp-label {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #9c9c9c;
   text-align: right;
   position: relative;
   top: 5px;
@@ -409,7 +409,7 @@ table {
 }
 .date-divider span {
   font-size: 0.8rem;
-  color: #aaa;
+  color: #9c9c9c;
 }
 
 #datepicker {
@@ -536,7 +536,7 @@ table {
   color: #af0909;
 }
 #calendar-container .ui-datepicker-calendar td.has-events:hover a {
-  color: #aaa;
+  color: #9c9c9c;
 }
 #calendar-container .ui-datepicker-calendar td .ui-state-default {
   cursor: pointer;
@@ -634,7 +634,7 @@ table {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 20px;
-  color: #aaa;
+  color: #9c9c9c;
   display: none;
 }
 
