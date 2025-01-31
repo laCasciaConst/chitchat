@@ -220,7 +220,7 @@ $(document).ready(function () {
 
     if (extensions.includes(fileExtension)) {
       const path = `./src/img/${fileName}`;
-      console.log(`File path: ${path}`);
+      // console.log(`File path: ${path}`);
       return path;
     }
     return fileName;
