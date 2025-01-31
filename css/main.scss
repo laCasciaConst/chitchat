@@ -153,6 +153,13 @@ select#date-selector {
   clear: both;
   width: auto;
 
+  &.emoji {
+    .message {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
   &.no-max-width {
     max-width: 100% !important;
     width: auto;

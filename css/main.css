@@ -140,6 +140,10 @@ select#date-selector option {
   clear: both;
   width: auto;
 }
+.message-container.emoji .message {
+  padding: 0;
+  background-color: transparent;
+}
 .message-container.no-max-width {
   max-width: 100% !important;
   width: auto;
