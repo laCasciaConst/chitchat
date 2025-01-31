@@ -1159,6 +1159,10 @@ select#date-selector {
 }
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
+  // #calendar-container {
+  //   width: 95vw;
+  // }
+
   .outer-container {
     width: 90vw;
     height: 90vh;
@@ -1292,6 +1296,34 @@ select#date-selector {
 // }
 
 @media screen and (max-width: 429.99px) and (min-width: 350px) {
+  // #calendar-container {
+  //   width: 95vw;
+  //   height: 60vw;
+
+  //   table {
+  //     top: 1vw !important;
+  //     width: 90vw !important;
+  //   }
+
+  //   tbody {
+  //     &.calendar-body {
+  //       width: 90vw;
+  //     }
+  //   }
+
+  //   th span {
+  //     font-size: 3rem !important;
+  //   }
+
+  //   td {
+  //     top: 10px;
+  //     position: relative;
+  //     width: 40px !important;
+  //     height: 25px !important;
+  //     font-size: 2.5rem !important;
+  //   }
+  // }
+
   .outer-container {
     width: 90vw;
     height: 90vh;
