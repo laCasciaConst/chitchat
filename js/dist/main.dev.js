@@ -216,8 +216,8 @@ $(document).ready(function () {
     var fileExtension = fileName.split(".").pop().toLowerCase();
 
     if (extensions.includes(fileExtension)) {
-      return "./src/img/".concat(fileName);
-      console.log("File path: ".concat(path));
+      var path = "./src/img/".concat(fileName); // console.log(`File path: ${path}`);
+
       return path;
     }
 
@@ -249,17 +249,7 @@ $(document).ready(function () {
     }
 
     return content;
-  }; // const processMessage = (message) => {
-  //   Object.keys(emojiMap).forEach((code) => {
-  //     const emojiImage = emojiMap[code];
-  //     if (message.includes(code)) {
-  //       console.log(`Replacing ${code} with ${emojiImage}`);
-  //     }
-  //     message = message.replace(new RegExp(code, "g"), emojiImage);
-  //   });
-  //   return message;
-  // };
-
+  };
 
   var processMessage = function processMessage(message) {
     return message;
@@ -272,7 +262,6 @@ $(document).ready(function () {
     // 초기 설정
     $("#chat-container").empty();
     $("#no-results").hide();
-    $("#search-toggle-button").css("display", "block");
 
     if (!selectedDate) {
       selectedDate = $("#date-selector").val();
@@ -385,7 +374,7 @@ $(document).ready(function () {
             messageDiv = $("<img>").attr("src", _mediaPath).addClass("rounded-media");
             messageContainer.append(messageDiv);
           } else if (_mediaPath.endsWith(".mp4")) {
-            messageDiv = $("<video controls>").attr("src", _mediaPath).addClass("rounded-media");
+            messageDiv = $("<video controls>").append($("<source>").attr("src", _mediaPath).attr("type", "video/mp4")).addClass("rounded-media").attr("preload", "auto").attr("playsinline", "");
             messageContainer.append(messageDiv);
           } else if (isEmojiOnly(chat.message)) {
             messageDiv = $("<div></div>").addClass("emoji").text(chat.message);
@@ -464,9 +453,8 @@ $(document).ready(function () {
         var isAppleStyle = processedMessage.includes("✉️");
 
         if (isAppleStyle) {
-          messageDiv.addClass("apple-style"); // 이모지를 제거하여 메시지를 깔끔하게 유지
-
-          processedMessage = processedMessage.replace(/✉️/g, "").replace(/\\/g, "<br>");
+          messageDiv.addClass("apple-style");
+          processedMessage = processedMessage.replace(/✉️/g, "").replace(/\(([^)]+)\)/g, "<i>($1)</i>").replace(/\\/g, "<br>");
           var messageText = $("<span></span>").html(processedMessage);
           messageDiv.append(messageText);
           messageContainer.append(messageDiv);
@@ -482,7 +470,7 @@ $(document).ready(function () {
 
           if (isLastInGroup) {
             if (senderClass === "me") {
-              messageDiv.css("border-radius", "28px 28px 5px 28px");
+              messageDiv.css("border-radius", "25px 25px 5px 25px");
             } else {
               messageDiv.css("border-radius", "25px 25px 25px 5px");
             }
@@ -537,7 +525,7 @@ $(document).ready(function () {
           messageDiv = $("<img>").attr("src", mediaPath).addClass("rounded-media");
           messageContainer.append(messageDiv);
         } else if (mediaPath.endsWith(".mp4")) {
-          messageDiv = $("<video controls>").attr("src", mediaPath).addClass("rounded-media");
+          messageDiv = $("<video controls>").append($("<source>").attr("src", mediaPath).attr("type", "video/mp4")).addClass("rounded-media").attr("preload", "auto").attr("playsinline", "");
           messageContainer.append(messageDiv);
         } else if (isEmojiOnly(chat.message)) {
           messageDiv = $("<div></div>").addClass("emoji").text(chat.message);
@@ -557,14 +545,26 @@ $(document).ready(function () {
           var highlightCircle = $("<div></div>").addClass("highlight-circle");
           messageContainer.append(highlightCircle);
           messageDiv.hover(function (event) {
-            if ($(this).attr("data-tip")) {
-              $("#tooltip").html($(this).attr("data-tip"));
-              $("#tooltip").css({
-                top: event.pageY + 10 + "px",
-                left: event.pageX + 10 + "px"
-              });
-              $("#tooltip").show();
+            var tooltip = $("#tooltip");
+            var top = event.pageY + 10;
+            var left = event.pageX + 10;
+            var tooltipWidth = tooltip.outerWidth();
+            var tooltipHeight = tooltip.outerHeight();
+
+            if (left + tooltipWidth > $(window).width()) {
+              left = event.pageX - tooltipWidth - 10;
             }
+
+            if (top + tooltipHeight > $(window).height()) {
+              top = event.pageY - tooltipHeight - 10;
+            }
+
+            tooltip.html($(this).attr("data-tip"));
+            tooltip.css({
+              top: "".concat(top, "px"),
+              left: "".concat(left, "px")
+            });
+            tooltip.show();
           }, function () {
             $("#tooltip").hide();
           });

@@ -132,6 +132,11 @@ select#date-selector option {
   font-family: inherit;
 }
 
+pre {
+  font-size: inherit;
+  font-family: inherit;
+}
+
 .message-container {
   display: flex;
   flex-direction: column;

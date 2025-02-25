@@ -145,6 +145,11 @@ select#date-selector {
   }
 }
 
+pre {
+  font-size: inherit;
+  font-family: inherit;
+}
+
 .message-container {
   display: flex;
   flex-direction: column;

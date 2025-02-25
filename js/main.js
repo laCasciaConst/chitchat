@@ -487,9 +487,9 @@ $(document).ready(function () {
         const isAppleStyle = processedMessage.includes("✉️");
         if (isAppleStyle) {
           messageDiv.addClass("apple-style");
-          // 이모지를 제거하여 메시지를 깔끔하게 유지
           processedMessage = processedMessage
             .replace(/✉️/g, "")
+            .replace(/\(([^)]+)\)/g, "<i>($1)</i>")
             .replace(/\\/g, "<br>");
 
           const messageText = $("<span></span>").html(processedMessage);
