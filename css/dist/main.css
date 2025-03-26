@@ -949,7 +949,7 @@ select#date-selector {
 }
 @media screen and (max-width: 1024px) and (min-width: 600px) {
   .calender-wrapper {
-    transform: scale(0.75) translate(-65%, -60%);
+    transform: scale(0.75) translate(-65%, -70%);
   }
   .calender-wrapper #previous, .calender-wrapper #next {
     font-size: 3rem;
@@ -1038,7 +1038,7 @@ select#date-selector {
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
   .calender-wrapper {
-    transform: scale(0.62) translate(-80%, -75%);
+    transform: scale(0.62) translate(-80%, -85%);
   }
   .calender-wrapper #previous, .calender-wrapper #next {
     font-size: 3rem;
@@ -1109,7 +1109,7 @@ select#date-selector {
 }
 @media screen and (max-width: 429.99px) and (min-width: 350px) {
   .calender-wrapper {
-    transform: scale(0.5) translate(-100%, -95%);
+    transform: scale(0.5) translate(-100%, -105%);
   }
   .calender-wrapper #previous, .calender-wrapper #next {
     font-size: 3rem;
