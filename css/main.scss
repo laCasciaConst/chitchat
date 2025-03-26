@@ -57,7 +57,8 @@ html {
 }
 
 body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif;
   font-weight: 400;
   background-color: $bg-color;
   display: flex;
@@ -555,13 +556,32 @@ pre {
   padding: 5px;
 }
 //달력
-#calendar-container {
-  width: 40rem;
-  height: 29rem;
+.calender-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  & #previous,
+  & #next {
+    color: white;
+    font-size: 4rem;
+    background: none;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+#calendar-container {
+  width: 40rem;
+  height: 29rem;
   font-family: "pretendard";
   background-color: #fff;
   padding: 25px;
@@ -614,27 +634,26 @@ pre {
           font-weight: 900;
           top: $top;
         }
-      
+
         @if $left != null {
           left: $left;
         }
       }
-      
+
       &.half_num_1 {
         position: relative;
         @include half-num-style(7px);
       }
-      
+
       &.half_num_2 {
         position: absolute;
         @include half-num-style(-20px, 30px); // top: -20px, left: 30px
       }
-      
+
       &.half_num_3 {
         position: relative;
         @include half-num-style(-20px, 30px);
       }
-      
 
       .last_corn {
         position: relative;
@@ -1076,9 +1095,13 @@ select#date-selector {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 600px) {
-  #calendar-container {
-    transform: scale(0.75) translate(-50%, -50%);
-    transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.75) translate(-65%, -60%);
+
+    & #previous,
+    & #next {
+      font-size: 3rem;
+    }
   }
 
   #mobile {
@@ -1178,11 +1201,15 @@ select#date-selector {
 }
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
-  #calendar-container {
-    transform: scale(0.62) translate(-50%, -50%);
-    transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.62) translate(-80%, -75%);
+
+    & #previous,
+    & #next {
+      font-size: 3rem;
+    }
   }
-  
+
   .outer-container {
     width: 90vw;
     height: 90vh;
@@ -1260,65 +1287,14 @@ select#date-selector {
   }
 }
 
-// @media screen and (max-width: 766.99px) and (min-width: 430px) and (orientation: landscape) {
-//   .message {
-//     font-weight: 400;
-//   }
-
-//   .outer-container {
-//     width: 80vw;
-//     height: 95vh;
-//   }
-
-//   .message-container {
-//     max-width: 70%;
-//     .timestamp-label {
-//       font-size: 0.7rem;
-//     }
-//     &.has-reaction {
-//       &.long-message .timestamp-label {
-//         top: -20px !important;
-//         max-width: none;
-//       }
-//     }
-//   }
-
-//   .message {
-//     font-size: 12px;
-//     i {
-//       font-size: 9.5px;
-//       font-weight: 400;
-//       color: #9c9c9c;
-//     }
-//     &.apple-style {
-//       &.friend {
-//         padding: 11px 14px 12px 10px;
-//       }
-//       &.me {
-//         padding: 11.5px 13px 11.5px 13px;
-//       }
-//     }
-//   }
-
-//   .quote-text {
-//     font-size: 12px;
-//   }
-
-//   .reaction-box {
-//     width: 1.3rem;
-//     height: 1.3rem;
-//     border-radius: 6px;
-//   }
-
-//   .reaction-icon {
-//     font-size: 0.8rem;
-//   }
-// }
-
 @media screen and (max-width: 429.99px) and (min-width: 350px) {
-  #calendar-container {
-      transform: scale(0.5) translate(-50%, -50%);
-      transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.5) translate(-100%, -95%);
+
+    & #previous,
+    & #next {
+      font-size: 3rem;
+    }
   }
 
   .outer-container {

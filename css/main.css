@@ -488,13 +488,29 @@ pre {
   padding: 5px;
 }
 
-#calendar-container {
-  width: 40rem;
-  height: 29rem;
+.calender-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.calender-wrapper #previous, .calender-wrapper #next {
+  color: white;
+  font-size: 4rem;
+  background: none;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+}
+
+#calendar-container {
+  width: 40rem;
+  height: 29rem;
   font-family: "pretendard";
   background-color: #fff;
   padding: 25px;
@@ -914,9 +930,11 @@ select#date-selector {
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 600px) {
-  #calendar-container {
-    transform: scale(0.75) translate(-50%, -50%);
-    transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.75) translate(-65%, -60%);
+  }
+  .calender-wrapper #previous, .calender-wrapper #next {
+    font-size: 3rem;
   }
   #mobile {
     display: none !important;
@@ -993,9 +1011,11 @@ select#date-selector {
 }
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
-  #calendar-container {
-    transform: scale(0.62) translate(-50%, -50%);
-    transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.62) translate(-80%, -75%);
+  }
+  .calender-wrapper #previous, .calender-wrapper #next {
+    font-size: 3rem;
   }
   .outer-container {
     width: 90vw;
@@ -1055,9 +1075,11 @@ select#date-selector {
   }
 }
 @media screen and (max-width: 429.99px) and (min-width: 350px) {
-  #calendar-container {
-    transform: scale(0.5) translate(-50%, -50%);
-    transform-origin: top left;
+  .calender-wrapper {
+    transform: scale(0.5) translate(-100%, -95%);
+  }
+  .calender-wrapper #previous, .calender-wrapper #next {
+    font-size: 3rem;
   }
   .outer-container {
     width: 90vw;
