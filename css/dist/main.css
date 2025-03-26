@@ -103,14 +103,16 @@ table {
   background-color: #000;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 10px 0 10px;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
-  visibility: hidden;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  visibility: hidden;
+  width: clamp(300px, 80vw, 600px);
+  height: clamp(400px, 90vh, 800px);
 }
 .outer-container .chat-container {
   flex-grow: 1;
@@ -552,6 +554,15 @@ pre {
   font-weight: 900;
   top: -20px;
 }
+#calendar-container .ui-datepicker-calendar td.half_num_3 {
+  position: relative;
+  left: 30px;
+}
+#calendar-container .ui-datepicker-calendar td.half_num_3 a {
+  font-size: 2rem !important;
+  font-weight: 900;
+  top: -20px;
+}
 #calendar-container .ui-datepicker-calendar td .last_corn {
   position: relative;
   height: 50px;
@@ -923,6 +934,11 @@ select#date-selector {
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 600px) {
+  #calendar-container {
+    transform: scale(0.75) translate(-50%, -50%);
+    transform-origin: top left;
+  }
+
   #mobile {
     display: none !important;
   }
@@ -1005,6 +1021,11 @@ select#date-selector {
 }
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
+  #calendar-container {
+    transform: scale(0.62) translate(-50%, -50%);
+    transform-origin: top left;
+  }
+
   .outer-container {
     width: 90vw;
     height: 90vh;

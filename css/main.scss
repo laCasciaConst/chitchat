@@ -117,14 +117,18 @@ table {
   background-color: $bg-color;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 10px 0 10px;
+  padding: 1rem 1rem 0 1rem;
+
   display: flex;
-  visibility: hidden;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  visibility: hidden;
+
+  width: clamp(300px, 80vw, 600px);
+  height: clamp(400px, 90vh, 800px);
 
   .chat-container {
     flex-grow: 1;
@@ -608,24 +612,33 @@ pre {
         display: block;
       }
 
+      @mixin half-num-style($top, $left: null) {
+        a {
+          font-size: 2rem !important;
+          font-weight: 900;
+          top: $top;
+        }
+      
+        @if $left != null {
+          left: $left;
+        }
+      }
+      
       &.half_num_1 {
         position: relative;
-        a {
-          font-size: 2rem !important;
-          font-weight: 900;
-          top: 7px;
-        }
+        @include half-num-style(7px);
       }
-
+      
       &.half_num_2 {
         position: absolute;
-        left: 30px;
-        a {
-          font-size: 2rem !important;
-          font-weight: 900;
-          top: -20px;
-        }
+        @include half-num-style(-20px, 30px); // top: -20px, left: 30px
       }
+      
+      &.half_num_3 {
+        position: relative;
+        @include half-num-style(-20px, 30px);
+      }
+      
 
       .last_corn {
         position: relative;
@@ -1067,6 +1080,11 @@ select#date-selector {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 600px) {
+  #calendar-container {
+    transform: scale(0.75) translate(-50%, -50%);
+    transform-origin: top left;
+  }
+
   #mobile {
     display: none !important;
   }
@@ -1164,10 +1182,11 @@ select#date-selector {
 }
 
 @media screen and (max-width: 599.99px) and (min-width: 430px) {
-  // #calendar-container {
-  //   width: 95vw;
-  // }
-
+  #calendar-container {
+    transform: scale(0.62) translate(-50%, -50%);
+    transform-origin: top left;
+  }
+  
   .outer-container {
     width: 90vw;
     height: 90vh;
