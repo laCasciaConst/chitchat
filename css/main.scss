@@ -46,6 +46,14 @@
   src: url("../fonts/woff2/PretendardStdVariable.woff2")
     format("woff2-variations");
 }
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: url('../fonts/pretendard/PretendardVariable.woff2') format('woff2-variations');
+}
+
 
 // Variables
 $primary-color: #414141;
