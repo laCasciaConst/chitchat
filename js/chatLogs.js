@@ -11570,7 +11570,7 @@ const chatLogs = {
     { sender: "L", message: "꺼지세윤."},
     { sender: "J", message: "그건 또 무슨 말투냐?"},
     { sender: "L", message: "잼민이한테 쓰면 언제적 유행이냐고 꼽먹는 슬픈 20대 중반 말투."},
-    { sender: "J", message: "아, 너같은 거."},
+    { sender: "J", message: "아, 너 같은 거."},
     { sender: "L", message: "그치. 잘 알아듣네?", timestamp: "2025-04-18", reaction: "❤️️"},
   ],
 
